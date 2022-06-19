@@ -66,3 +66,4 @@ update_business()
 + create a view function to render to template
 + create a urls.py file and add the urls
 + connect the urls of the app to the project urls.py
++ run server to confirm if the paths are working
