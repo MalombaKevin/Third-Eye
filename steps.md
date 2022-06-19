@@ -58,3 +58,4 @@ update_business()
 + create a .gitignore file, add .env file to it
 + Generate django-project
 + run server
++ Generate django-app
