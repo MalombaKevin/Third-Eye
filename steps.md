@@ -56,3 +56,5 @@ update_business()
 + Create and activate virtual evironment
 + create a requirements.txt file, add dependencies and install them
 + create a .gitignore file, add .env file to it
++ Generate django-project
++ run server
