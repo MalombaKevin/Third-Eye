@@ -61,3 +61,4 @@ update_business()
 + Generate django-app
 + adds .env file and setup database
 + update prpject setting files
++ setup database
