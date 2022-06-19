@@ -62,3 +62,7 @@ update_business()
 + adds .env file and setup database
 + update prpject setting files
 + setup database
++ create templates folder and add templates; index.html
++ create a view function to render to template
++ create a urls.py file and add the urls
++ connect the urls of the app to the project urls.py
