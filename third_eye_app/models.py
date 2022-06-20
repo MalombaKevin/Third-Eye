@@ -18,7 +18,7 @@ class Profile(models.Model):
 class Business(models.Model):
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
-    profile = models.ForeignKey(Profile, on_delete=CASCADE, null = True, blank=True)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null = True, blank=True)
 
     def __str__(self):
         return self.name
