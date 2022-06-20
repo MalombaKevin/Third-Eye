@@ -1,12 +1,12 @@
 # Instructions
 ### A user should be able to:
-+ Sign in with the application to start using.
++ Sign in with the application to start using. (done)
 + Set up a profile about me and a general location and my neighborhood name.
 + Find a list of different businesses in my neighborhood.
 + Find Contact Information for the health department and Police authorities near my neighborhood.
-+ Create Posts that will be visible to everyone in my neighborhood.
-+ Change My neighborhood when I decide to move out.
-+ Only view details of a single neighborhood.
++ Create Posts that will be visible to everyone in my neighborhood.*
++ Change My neighborhood when I decide to move out. *
++ Only view details of a single neighborhood. *
 
 # Classes
 
@@ -67,3 +67,15 @@ update_business()
 + create a urls.py file and add the urls
 + connect the urls of the app to the project urls.py
 + run server to confirm if the paths are working
++ create a static folder to hold images/css and js
++ create a navigation bar template
++ create an authentification system (Login/logout/signup)
++ create models for the database
++ make migrations
++ work on the user interface
++ retrieval of data from database (neighborhood, business, user)
++ deployment to heroku
++ Add license
++ Add readme
+
+
