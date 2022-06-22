@@ -1,5 +1,5 @@
 from django import forms
-from .models import Jirani, Profile_thirdeye, Business
+from .models import Jirani, Profile_thirdeye, Business, User_Posts
 
 class Add_Profile_Form(forms.ModelForm):
     class Meta:
@@ -19,3 +19,9 @@ class Jirani_Form(forms.ModelForm):
         model = Jirani
         fields = ('jirani_name', 'jirani_location', 'jirani_population')
         exclude = ['user']
+
+class Post_Form(forms.ModelForm):
+    class Meta:
+        model = User_Posts
+        fields = ('category', 'content')
+        exclude = ['user', 'profile']
