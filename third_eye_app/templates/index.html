@@ -15,8 +15,8 @@
 <body>
     {% include 'navbar.html'%}
     <div class="container" align="center"><br>
-        <form action="">
-            <input type="search" class="form-control" name="title" id="title" placeholder="Find a business near you "
+        <form action="{%url 'search'%}">
+            <input type="search" class="form-control" name="biz" id="title" placeholder="Find a business near you "
                 style="border:none;border-bottom:gold solid;width:50%;outline:none;background-color:transparent; font-size:large"><br><br>
 
         </form>
@@ -32,16 +32,17 @@
                 <!-- Modal -->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-scrollable modal-xl" align="center">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">My Businesses</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel"> <span style="font-weight:900; color:blue"> Businesses</span></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <div class="row">
                                 {% for bizna in mabiz%}
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="card">
                                         <div class="card-header">
                                             {{bizna.name}}
@@ -50,12 +51,15 @@
                                         <div class="card-body">
                                             {{bizna.email}}
                                         </div>
-                                    </div> <br>
+                                    </div><br>
+                                    </div>
+                                    {%endfor%} 
                                 </div>
 
 
 
-                                {%endfor%}
+
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

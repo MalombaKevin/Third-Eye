@@ -75,5 +75,18 @@ def add_post(request):
     return render (request, 'add/add_posts.html', {'form': form})
 
 
+@login_required(login_url='/accounts/login/')
+def search_results(request):
+    if 'biz' in request.GET and request.GET["biz"]:
+        search_term = request.GET.get("biz")
+        business = Business.search_business(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html', {'mabiz':business, 'message':message})
+    else:
+    
+        return render(request, 'search.html')
+
+
 
 

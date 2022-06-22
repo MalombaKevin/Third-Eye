@@ -36,6 +36,12 @@ class Business(models.Model):
     
     def delete_business(self):
         self.delete()
+
+    @classmethod
+    def search_business(cls, search_term):
+        search_res = cls.objects.filter(name__icontains=search_term)
+        return search_res
+
 #Posts class
 class User_Posts(models.Model):
     category = models.CharField(max_length=200)
