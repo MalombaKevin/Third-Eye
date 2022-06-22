@@ -8,7 +8,8 @@ from third_eye_app.models import Profile_thirdeye, User_Posts
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def index(request):
-    return render(request, 'index.html')
+    posts = User_Posts.objects.all()
+    return render(request, 'index.html', {'posts': posts})
 
 #Profile
 @login_required(login_url='/accounts/login/')  
@@ -44,7 +45,7 @@ def add_profile(request):
 @login_required(login_url='/accounts/login/')
 def add_biashara(request):
     if request.method == 'POST':
-        form = Business_Form(request.Post, request.FILES)
+        form = Business_Form(request.POST, request.FILES)
         if form.is_valid():
             business = form.save(commit = False)
             business.user = request.user
@@ -60,7 +61,7 @@ def add_biashara(request):
 @login_required(login_url='/accounts/login/')
 def add_post(request):
     if request.method == 'POST':
-        form = Post_Form(request.Post, request.FILES)
+        form = Post_Form(request.POST, request.FILES)
         if form.is_valid():
             business = form.save(commit = False)
             business.user = request.user
