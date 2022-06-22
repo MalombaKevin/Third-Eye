@@ -9,7 +9,8 @@ from third_eye_app.models import Business, Profile_thirdeye, User_Posts
 @login_required(login_url='/accounts/login/')
 def index(request):
     posts = User_Posts.objects.all()
-    return render(request, 'index.html', {'posts': posts})
+    business =Business.objects.all()
+    return render(request, 'index.html', {'posts': posts, "mabiz":business})
 
 #Profile
 @login_required(login_url='/accounts/login/')  
