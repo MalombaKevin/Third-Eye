@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from third_eye_app.forms import Add_Profile_Form, Business_Form, Post_Form
 
-from third_eye_app.models import Profile_thirdeye, User_Posts
+from third_eye_app.models import Business, Profile_thirdeye, User_Posts
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -17,12 +17,13 @@ def profile(request):
     if Profile_thirdeye.objects.filter(user_id=request.user.id).exists():
         profile = Profile_thirdeye.objects.get(user_id=request.user.id)
         posts = User_Posts.objects.filter(user_id = request.user.id).all()
+        biashara = Business.objects.filter(user_id = request.user.id).all()
     else:
         profile = None
         posts= None
 
     
-    return render(request, 'profile.html', {'profile': profile,'posts': posts})
+    return render(request, 'profile.html', {'profile': profile,'posts': posts, "mabiz":biashara})
 
 #add new Profile
 
