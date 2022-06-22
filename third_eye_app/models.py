@@ -50,8 +50,8 @@ class User_Posts(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 #Neighborhood class
-class Jirani(models.Model):
-    jirani_name = models.CharField(max_length=200)
-    jirani_location= models.CharField(max_length=200)
-    jirani_population =models.CharField(max_length=100)
+class Areacode(models.Model):
+    area_name = models.CharField(max_length=200)
+    area_location= models.CharField(max_length=200)
+    area_population =models.CharField(max_length=100)
     
