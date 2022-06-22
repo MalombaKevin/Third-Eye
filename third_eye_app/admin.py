@@ -1,9 +1,10 @@
 from django.contrib import admin
 
-from third_eye_app.models import Business, Profile, User_Posts
+from third_eye_app.models import Business, Jirani, Profile_thirdeye, User_Posts
 
 # Register your models here.
-admin.site.register(Profile)
+admin.site.register(Profile_thirdeye)
 admin.site.register(Business)
 admin.site.register(User_Posts)
+admin.site.register(Jirani)
 
